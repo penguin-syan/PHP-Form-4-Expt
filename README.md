@@ -6,11 +6,15 @@
 
 ```json:composer.json
 {
-   "repositories": [
-      {
-         "type": "git",
-	 "url": "https://github.com/penguin-syan/ComposerTest.git"
-      }
-   ]
+  "repositories": [
+    {
+      "type": "git",
+      "url": "https://github.com/penguin-syan/PHP-Form-4-Expt.git"
+    }
+  ],
+
+  "require": {
+    "penguin_syan/composertest": "1.*"
+  }
 }
 ```
