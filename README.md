@@ -37,9 +37,9 @@ $ composer require penguin-syan/PHP-Form-4-Expt
 
 ### 方法2：composer.jsonを直接記述する
 
-3. 本ライブラリを使用するプロジェクトディレクトリに`composer.json`ファイルを作成し，以下の内容を記述する
-4. ターミナルにてプロジェクトディレクトリを開き，コマンド`composer install`を実行する
-5. インストールに成功した場合，`vendor/`ディレクトリが作成される
+1. 本ライブラリを使用するプロジェクトディレクトリに`composer.json`ファイルを作成し，以下の内容を記述する
+1. ターミナルにてプロジェクトディレクトリを開き，コマンド`composer install`を実行する
+1. インストールに成功した場合，`vendor/`ディレクトリが作成される
 
 * ライブラリをアップデートする場合は，ターミナルにて`プロジェクトディレクトリ`を開き，コマンド`composer upgrade`を実行する．
 
@@ -69,4 +69,5 @@ use function penguin_syan\ComposerTest\hworld;
 use function penguin_syan\ComposerTest\hworld_text;
 ```
 
-詳細は[Wiki](https://github.com/penguin-syan/PHP-Form-4-Expt/wiki)を参照すること．
+本ライブラリの利用に関する詳細は[ドキュメント](https://penguin-syan.github.io/PHP-Form-4-Expt/)を参照すること．
+開発者用データは[Wiki](https://github.com/penguin-syan/PHP-Form-4-Expt/wiki)を参照すること．
