@@ -1,11 +1,11 @@
 {
-    "name": "penguin_syan/phpform4expt",
+    "name": "penguin-syan/php-form-4-expt",
     "description": "研究で使用するPHPベースのアンケートフォーム作成用ライブラリ",
     "type": "library",
     "license": "Released by penguin_syan under the MIT License.",
     "autoload": {
         "psr-4": {
-            "PenguinSyan\\Phpform4expt\\": "src/"
+            "penguin-syan\\php-form-4-expt\\": "src/"
         }
     },
     "authors": [
