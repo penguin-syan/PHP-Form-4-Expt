@@ -15,5 +15,5 @@ namespace penguin_syan\php_form_4_expt;
  * @return string ユーザIDとユーザ名を結合した文字列
  */
 function sample_func(int $id, string $name){
-   return "ユーザIDが".$id."の人は".$name."さんです．";
+    return "ユーザIDが".$id."の人は".$name."さんです．";
 }
