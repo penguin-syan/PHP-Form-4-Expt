@@ -9,10 +9,20 @@ on:
     
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  build:
+  phpdoc:
     runs-on: ubuntu-latest
+
     steps:
-      - name: PhpDocumentor
-        uses: gpupo/actions-phpDocumentor@1.0
-        with:
-          dir: './docs'
+      - uses: actions/checkout@v2
+
+      - name: Run phpdoc
+        run: |
+          docker run --rm -v $(pwd):/data phpdoc/phpdoc:3 -d ./Src -t ./docs
+
+      - name: git commit
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email ""
+          git add docs/
+          git commit -m "Update phpdoc" || echo "No changes to commit"
+          git push
