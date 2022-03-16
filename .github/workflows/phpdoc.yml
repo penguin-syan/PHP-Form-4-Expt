@@ -1,0 +1,30 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Create PHPdoc
+
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches:
+      - '**'
+      - '!main'
+    
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  phpdoc:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Run phpdoc
+        run: |
+          docker run --rm -v $(pwd):/data phpdoc/phpdoc:3 -d ./Src -t ./docs
+
+      - name: git commit
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email ""
+          git add docs/
+          git commit -m "Update phpdoc" || echo "No changes to commit"
+          git push
