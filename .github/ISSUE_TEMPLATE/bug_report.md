@@ -1,7 +1,7 @@
 ---
 name: バグ報告
 about: 本ライブラリのバグ報告には，このテンプレートの使用を推奨します．
-title: ''
+title: "[BUG]"
 labels: ''
 assignees: ''
 
