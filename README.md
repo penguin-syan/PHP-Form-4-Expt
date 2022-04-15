@@ -47,13 +47,13 @@ $ composer require penguin-syan/PHP-Form-4-Expt
 {
   "repositories": [
     {
-      "type": "git",
+      "type": "vcs",
       "url": "https://github.com/penguin-syan/PHP-Form-4-Expt.git"
     }
   ],
 
   "require": {
-    "penguin_syan/composertest": "1.*"
+    "penguin_syan/php-form-4-expt": "1.*"
   }
 }
 ```
@@ -64,9 +64,8 @@ $ composer require penguin-syan/PHP-Form-4-Expt
 ```php
 require_once dirname(__FILE__).'/vendor/autoload.php';
 
-use penguin_syan\ComposerTest\WorldClass;
-use function penguin_syan\ComposerTest\hworld;
-use function penguin_syan\ComposerTest\hworld_text;
+use penguin_syan\php_form_4_expt\<CLASS_NAME>;
+use function penguin_syan\php_form_4_expt\<FUNCTION_NAME>;
 ```
 
 本ライブラリの利用に関する詳細は[ドキュメント](https://penguin-syan.github.io/PHP-Form-4-Expt/)を参照すること．
