@@ -1,7 +1,7 @@
 ---
 name: 機能追加リクエスト
 about: 新機能の提案には，このテンプレートの使用を推奨します．
-title: "[ADD]"
+title: "[dev-]"
 labels: ''
 assignees: ''
 
