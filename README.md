@@ -70,3 +70,8 @@ use function penguin_syan\php_form_4_expt\<FUNCTION_NAME>;
 
 本ライブラリの利用に関する詳細は[ドキュメント](https://penguin-syan.github.io/PHP-Form-4-Expt/)を参照すること．
 開発者用データは[Wiki](https://github.com/penguin-syan/PHP-Form-4-Expt/wiki)を参照すること．
+
+## ⚖️ ライセンス
+Copyright (c) 2022 HSSLab.  
+This code is released under the MIT license.  
+See [LICENSE](https://github.com/penguin-syan/PHP-Form-4-Expt/blob/main/LICENSE) or [https://opensource.org/licenses/MIT](https://opensource.org/licenses/MIT)

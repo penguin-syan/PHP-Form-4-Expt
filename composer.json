@@ -2,7 +2,7 @@
     "name": "penguin-syan/php-form-4-expt",
     "description": "研究で使用するPHPベースのアンケートフォーム作成用ライブラリ",
     "type": "library",
-    "license": "Released by penguin_syan under the MIT License.",
+    "license": "Released by HSSLab under the MIT License.",
     "autoload": {
         "psr-4": {
             "penguin_syan\\php_form_4_expt\\": "src/"
@@ -10,8 +10,8 @@
     },
     "authors": [
         {
-            "name": "penguin-syan",
-            "email": "member@penguin-syan.tokyo"
+            "name": "HSSLab",
+            "email": "hai2016jinroh@gmail.com"
         }
     ],
     "require": {}
