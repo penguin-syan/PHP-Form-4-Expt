@@ -75,32 +75,52 @@ function video(string|array $filePass, int $size, int $max_play){
     <script type="text/javascript">
         window.onload = function(){
             let videoField = document.getElementById('videoField');
-            videoField.oncontextmenu = function () {return true;}
+            videoField.oncontextmenu = function () {return false;}
 
             let videos = document.querySelectorAll("#video");
             for (let i = 0; i < videos.length; i++){
                 let video = videos[i].children[0];
                 let p = videos[i].children[1];
                 let btn = videos[i].children[2];
+                let reload = false;
+                let pNum = p.innerText.slice(-1);
+                let cookie = document.cookie.split(';');
+                cookie.forEach(function(value) {
+                    let content = value.split('=');
+                    if (content[0] == document.domain + String(i)) {
+                        reload = true;
+                        pNum = content[1];
+                    }
+                })
+                if (reload != true) {
+                    document.cookie = document.domain + String(i) + '=' + p.innerText.slice(-1);
+                }
+                p.innerText = "再生可能回数："+ pNum;
+                if (parseInt(pNum)<= 0){
+                    btn.disabled = true;
+                } else {
+                    btn.disabled = false;
+                }
                 let clickFunc = function() {
-                    let pNum = p.innerText.slice(-1);
+                    pNum = parseInt(pNum) - 1;
                     if($full){
                         let width = video.style.width;
                         video.addEventListener("ended", function(){
+                            if (parseInt(pNum) > 0){
+                                btn.disabled = false;
+                            }
                             video.style.width = width;
                         }, false);
                         video.style.width = '98%';
                     }
                     video.play();
-                    p.innerText = "再生可能回数："+ String(parseInt(pNum) - 1);
-                    if (parseInt(pNum)-1 <= 0){
-                        btn.disabled = true;
-                    }
+                    btn.disabled = true;
+                    document.cookie = document.domain + String(i) + '=' + pNum;
+                    p.innerText = "再生可能回数："+ pNum;
                 }
                 btn.addEventListener("click",clickFunc);
             }
         }
     </script>
     EOM;
-
 }
