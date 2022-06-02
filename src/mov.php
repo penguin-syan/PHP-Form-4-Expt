@@ -75,8 +75,9 @@ function video(string|array $filePass, int $size, int $max_play){
     <script type="text/javascript">
         window.onload = function(){
             let videoField = document.getElementById('videoField');
-            videoField.oncontextmenu = function () {return false;}
+            videoField.oncontextmenu = function () {return true;}
 
+            let cookie = document.cookie.split(';');
             let videos = document.querySelectorAll("#video");
             for (let i = 0; i < videos.length; i++){
                 let video = videos[i].children[0];
@@ -84,15 +85,16 @@ function video(string|array $filePass, int $size, int $max_play){
                 let btn = videos[i].children[2];
                 let reload = false;
                 let pNum = p.innerText.slice(-1);
-                let cookie = document.cookie.split(';');
                 cookie.forEach(function(value) {
+                    value = value.replace(/\s+/g, "");
                     let content = value.split('=');
                     if (content[0] == document.domain + String(i)) {
                         reload = true;
                         pNum = content[1];
+                        console.log(pNum);
                     }
                 })
-                if (reload != true) {
+                if (reload === false) {
                     document.cookie = document.domain + String(i) + '=' + p.innerText.slice(-1);
                 }
                 p.innerText = "再生可能回数："+ pNum;
