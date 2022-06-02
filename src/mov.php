@@ -75,7 +75,7 @@ function video(string|array $filePass, int $size, int $max_play){
     <script type="text/javascript">
         window.onload = function(){
             let videoField = document.getElementById('videoField');
-            videoField.oncontextmenu = function () {return true;}
+            videoField.oncontextmenu = function () {return false;}
 
             let cookie = document.cookie.split(';');
             let videos = document.querySelectorAll("#video");
