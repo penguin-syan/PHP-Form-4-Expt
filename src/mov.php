@@ -16,7 +16,7 @@ namespace penguin_syan\php_form_4_expt;
  * @param int $max_play 再生可能回数
  */
 
-function mov(string|array $filePass, int $size, int $max_play){
+function video(string|array $filePass, int $size, int $max_play){
     switch ($size){
         case 0:
             $full = "false";
@@ -48,7 +48,7 @@ function mov(string|array $filePass, int $size, int $max_play){
             break;
     }
     
-    echo "<div id='mov'>";
+    echo "<div id='videoField'>";
     if (is_array($filePass)) {
         shuffle($filePass);
         $i = 0;
@@ -74,8 +74,8 @@ function mov(string|array $filePass, int $size, int $max_play){
     echo <<<EOM
     <script type="text/javascript">
         window.onload = function(){
-            let mov = document.getElementById('mov');
-            mov.oncontextmenu = function () {return true;}
+            let videoField = document.getElementById('videoField');
+            videoField.oncontextmenu = function () {return true;}
 
             let videos = document.querySelectorAll("#video");
             for (let i = 0; i < videos.length; i++){
