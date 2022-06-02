@@ -2,8 +2,7 @@
 namespace penguin_syan\php_form_4_expt;
 
 /**
- * 画像を表示するための関数
- * 画像サイズのパラメータ用クラス（ObjectSize）
+ * 動画，画像サイズのパラメータ用クラス（ObjectSize）
  *  
  */
 class ObjectSize {
