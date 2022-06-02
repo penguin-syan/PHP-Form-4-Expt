@@ -36,6 +36,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/penguin-syan-php-form-4-expt-ObjectSize.html#constant_FULL"
         },                {
+            "fqsen": "\\penguin_syan\\php_form_4_expt\\likert_scale\u0028\u0029",
+            "name": "likert_scale",
+            "summary": "\u52D5\u753B\u3092\u8868\u793A\u3059\u308B\u305F\u3081\u306E\u95A2\u6570",
+            "url": "namespaces/penguin-syan-php-form-4-expt.html#function_likert_scale"
+        },                {
             "fqsen": "\\penguin_syan\\php_form_4_expt\\sampleFunc\u0028\u0029",
             "name": "sampleFunc",
             "summary": "\u30B5\u30F3\u30D7\u30EB\u95A2\u6570",
