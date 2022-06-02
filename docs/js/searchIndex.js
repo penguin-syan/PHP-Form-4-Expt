@@ -6,6 +6,36 @@ Search.appendIndex(
             "summary": "\u51FA\u529B\u3055\u308C\u305FHTML\u306B\u304A\u3051\u308B\u30D5\u30A9\u30FC\u30E0\u306E\u7D42\u4E86\u3092\u5BA3\u8A00\u3059\u308B\u95A2\u6570",
             "url": "namespaces/penguin-syan-php-form-4-expt.html#function_formEnd"
         },                {
+            "fqsen": "\\penguin_syan\\php_form_4_expt\\image\u0028\u0029",
+            "name": "image",
+            "summary": "\u753B\u50CF\u3092\u8868\u793A\u3059\u308B\u305F\u3081\u306E\u95A2\u6570",
+            "url": "namespaces/penguin-syan-php-form-4-expt.html#function_image"
+        },                {
+            "fqsen": "\\penguin_syan\\php_form_4_expt\\ObjectSize",
+            "name": "ObjectSize",
+            "summary": "\u753B\u50CF\u3092\u8868\u793A\u3059\u308B\u305F\u3081\u306E\u95A2\u6570\n\u753B\u50CF\u30B5\u30A4\u30BA\u306E\u30D1\u30E9\u30E1\u30FC\u30BF\u7528\u30AF\u30E9\u30B9\uFF08ObjectSize\uFF09",
+            "url": "classes/penguin-syan-php-form-4-expt-ObjectSize.html"
+        },                {
+            "fqsen": "\\penguin_syan\\php_form_4_expt\\ObjectSize\u003A\u003ASMALL",
+            "name": "SMALL",
+            "summary": "",
+            "url": "classes/penguin-syan-php-form-4-expt-ObjectSize.html#constant_SMALL"
+        },                {
+            "fqsen": "\\penguin_syan\\php_form_4_expt\\ObjectSize\u003A\u003AMEDIUM",
+            "name": "MEDIUM",
+            "summary": "",
+            "url": "classes/penguin-syan-php-form-4-expt-ObjectSize.html#constant_MEDIUM"
+        },                {
+            "fqsen": "\\penguin_syan\\php_form_4_expt\\ObjectSize\u003A\u003ALARGE",
+            "name": "LARGE",
+            "summary": "",
+            "url": "classes/penguin-syan-php-form-4-expt-ObjectSize.html#constant_LARGE"
+        },                {
+            "fqsen": "\\penguin_syan\\php_form_4_expt\\ObjectSize\u003A\u003AFULL",
+            "name": "FULL",
+            "summary": "",
+            "url": "classes/penguin-syan-php-form-4-expt-ObjectSize.html#constant_FULL"
+        },                {
             "fqsen": "\\penguin_syan\\php_form_4_expt\\sampleFunc\u0028\u0029",
             "name": "sampleFunc",
             "summary": "\u30B5\u30F3\u30D7\u30EB\u95A2\u6570",
