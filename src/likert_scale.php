@@ -23,8 +23,8 @@ function likert_scale(string $question,string $supplement,array $choices,bool $r
         $req = "";
     }
     echo "<div class='question'>";
-    echo "<p>$question</p>";
-    echo "<p>$supplement</p>";
+    echo "<h4>$question</h4>";
+    echo "<p class='Qsup'>$supplement</p>";
     echo "<div style= 'display: flex;' class = 'radioButtons'>";
     $radioId = uniqid();
     for ($i = 0; $i < count($choices); $i++){
