@@ -105,14 +105,17 @@ function video(string|array $filePass, int $size, int $max_play){
                 }
                 let clickFunc = function() {
                     pNum = parseInt(pNum) - 1;
-                    if($full){
-                        let width = video.style.width;
-                        video.addEventListener("ended", function(){
-                            if (parseInt(pNum) > 0){
-                                btn.disabled = false;
-                            }
+                
+                    let width = video.style.width;
+                    video.addEventListener("ended", function(){
+                        if (parseInt(pNum) > 0){
+                            btn.disabled = false;
+                        }
+                        if($full){
                             video.style.width = width;
-                        }, false);
+                        }
+                    }, false);
+                    if($full){
                         video.style.width = '98%';
                     }
                     video.play();
