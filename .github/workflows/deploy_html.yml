@@ -2,7 +2,7 @@ name: Deploy html sample
 on:
   push:
     branches:
-      - main
+      #- main
     
 jobs:
   build:
