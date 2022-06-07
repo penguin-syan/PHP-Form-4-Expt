@@ -18,15 +18,9 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Delete phpdoc branch
+        continue-on-error: true
         run: |
-          branch_is_existing=$(
-            git fetch origin phpdocs &&
-            echo true ||
-            echo false
-          )
-          echo "BRANCH_IS_EXISTING=${branch_is_existing}" >> $GITHUB_ENV
-          if: env.BRANCH_IS_EXISTING == 'true'
-            git push --delete origin phpdoc
+          git push --delete origin phpdoc
 
       - name: Create new branch for push phpdoc
         env:
