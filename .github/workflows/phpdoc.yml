@@ -7,7 +7,6 @@ on:
   push:
     branches:
       - 'main'
-      - 'fix-002'
     
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -16,6 +15,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+
+      - name: Delete phpdoc branch
+        continue-on-error: true
+        run: |
+          git push --delete origin phpdoc
 
       - name: Create new branch for push phpdoc
         env:
@@ -40,5 +44,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          hub push
           hub pull-request -b main -m "Update phpdoc"
