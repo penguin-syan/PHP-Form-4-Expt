@@ -20,11 +20,12 @@ jobs:
       - name: Delete phpdoc branch
         run: |
           branch_is_existing=$(
-            git fetch origin phpdoc &&
+            git fetch origin phpdocs &&
             echo true ||
             echo false
           )
-          if: ${branch_is_existing} == 'true'
+          echo "BRANCH_IS_EXISTING=${branch_is_existing}" >> $GITHUB_ENV
+          if: env.BRANCH_IS_EXISTING == 'true'
             git push --delete origin phpdoc
 
       - name: Create new branch for push phpdoc
