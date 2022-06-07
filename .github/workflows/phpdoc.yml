@@ -7,6 +7,7 @@ on:
   push:
     branches:
       - 'main'
+      - 'fix-002'
     
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -15,6 +16,16 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+
+      - name: Delete phpdoc branch
+        run: |
+          branch_is_existing=$(
+            git fetch origin ${NEW_BRANCH_NAME} &&
+            echo true ||
+            echo false
+          )
+          if: ${branch_is_existing} == 'true'
+            git push --delete origin phpdoc
 
       - name: Create new branch for push phpdoc
         env:
