@@ -20,7 +20,7 @@ jobs:
       - name: Delete phpdoc branch
         run: |
           branch_is_existing=$(
-            git fetch origin ${NEW_BRANCH_NAME} &&
+            git fetch origin phpdoc &&
             echo true ||
             echo false
           )
