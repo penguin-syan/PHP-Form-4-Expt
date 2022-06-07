@@ -7,7 +7,6 @@ on:
   push:
     branches:
       - 'main'
-
     
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -17,14 +16,28 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Create new branch for push phpdoc
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git checkout -b "[docs]phpdoc"
+          git push origin "[docs]phpdoc"
+
       - name: Run phpdoc
         run: |
           docker run --rm -v $(pwd):/data phpdoc/phpdoc:3 -d ./src -t ./docs
 
-      - name: git commit
+      - name: Add change log to Git
         run: |
           git config user.name "GitHub Actions"
           git config user.email ""
           git add docs/
           git commit -m "Update phpdoc" || echo "No changes to commit"
-          git push
+          git push origin "[docs]phpdoc"
+      
+      -name: Create pull request
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH_NAME: "[docs]phpdoc"
+        run: |
+          hub pull-request -m "[docs]phpdoc" -b main -h $BRANCH_NAME
