@@ -36,8 +36,8 @@ jobs:
           git commit -m "Update phpdoc" || echo "No changes to commit"
           git push origin "phpdoc"      
       
-      -name: Create pull request
-        env: |
+      - name: Create pull request
+        env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           hub push
