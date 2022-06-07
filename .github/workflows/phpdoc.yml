@@ -21,8 +21,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          git checkout -b "[docs]phpdoc"
-          git push origin "[docs]phpdoc"
+          git checkout -b "phpdoc"
+          git push origin "phpdoc"
 
       - name: Run phpdoc
         run: |
@@ -34,12 +34,12 @@ jobs:
           git config user.email ""
           git add docs/
           git commit -m "Update phpdoc" || echo "No changes to commit"
-          git push origin "[docs]phpdoc"
+          git push origin "phpdoc"
       
       
       # -name: Create pull request
       #   env: |
       #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #     BRANCH_NAME: "[docs]phpdoc"
+      #     BRANCH_NAME: "phpdoc"
       #   run: |
-      #     hub pull-request -m "[docs]phpdoc" -b main -h $BRANCH_NAME
+      #     hub pull-request -m "phpdoc" -b main -h $BRANCH_NAME
