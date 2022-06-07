@@ -36,7 +36,7 @@ jobs:
           git push origin "[docs]phpdoc"
       
       -name: Create pull request
-        env:
+        env: |
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH_NAME: "[docs]phpdoc"
         run: |
