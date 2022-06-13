@@ -9,58 +9,65 @@ namespace penguin_syan\php_form_4_expt;
  * 
  * 
  * 使用例
- * $group1 = ["random_section",
- *             [
- *               ['video','./movie.mp4', ObjectSize::SMALL_FULL , 1],
- *               ["video",'./movie.mp4', ObjectSize::SMALL, 2],
- *               ["video",'./movie.mp4', ObjectSize::SMALL, 3],
- *               ['video','./movie.mp4', ObjectSize::SMALL_FULL , 4]
- *             ]
- *           ];
- *
- * $group2 = ["random_section",
- *             [
- *               ["likert_scale",'次のうち当てはまるものを選択してください．','迷わず，直感的に選択してください',['非常に同意する', '同意する', 'やや同意する', 'どちらともいえない', 'やや同意しない', '同意しない', '全く同意しない'],true],
- *               ["likert_scale",'次のうち当てはまるものを選択してください．','迷わず，直感的に選択してください',['非常に同意する', '同意する', 'やや同意する', 'どちらともいえない', 'やや同意しない', '同意しない', '全く同意しない'],true],
- *               ["likert_scale",'次のうち当てはまるものを選択してください．','迷わず，直感的に選択してください',['非常に同意する', '同意する', 'やや同意する', 'どちらともいえない', 'やや同意しない', '同意しない', '全く同意しない'],true]
- *             ]
- *           ];
- *
- * group_section([$group1,$group2]);
+ * $group1 = random_section::random_section_array(
+ *             [video::video_array('./movie.mp4', ObjectSize::SMALL_FULL , 1),
+ *              video::video_array('./movie.mp4', ObjectSize::SMALL, 2),
+ *              video::video_array('./movie.mp4', ObjectSize::SMALL, 3),
+ *              video::video_array('./movie.mp4', ObjectSize::SMALL_FULL , 4)]
+ *           );
+ * $group2 = random_section::random_section_array(
+ *              [likert_scale::likert_scale_array('次のうち当てはまるものを選択してください．','迷わず，直感的に選択してください',['非常に同意する', '同意する', 'やや同意する', 'どちらともいえない', 'やや同意しない', '同意しない', '全く同意しない'],true),
+ *               likert_scale::likert_scale_array('次のうち当てはまるものを選択してください．','迷わず，直感的に選択してください',['非常に同意する', '同意する', 'やや同意する', 'どちらともいえない', 'やや同意しない', '同意しない', '全く同意しない'],true),
+ *               likert_scale::likert_scale_array('次のうち当てはまるものを選択してください．','迷わず，直感的に選択してください',['非常に同意する', '同意する', 'やや同意する', 'どちらともいえない', 'やや同意しない', '同意しない', '全く同意しない'],true)]
+ *            );
+ * group_section::group_section([$group1,$group2]);
  * 
  * 
  * @param array $lib_function [string 関数名, 実行する関数の引数] ライブラリに実装された関数の配列
  */
+class group_section {
 
- function group_section(array $lib_function){
-    if (is_array($lib_function[0])){
-        foreach ($lib_function as $function) {
-           group_section($function);
-        }
-    } else {
-        if (count($lib_function) > 1){
-            run($lib_function[0],array_slice($lib_function, 1));
+    public static function group_section_array(array $lib_function){
+        return ['group_section', $lib_function];
+    }
+
+    public static function group_section(array $lib_function){
+        if (is_array($lib_function[0])){
+            foreach ($lib_function as $function) {
+                self::group_section($function);
+            }
         } else {
-            run($lib_function[0],[]);
+            if (count($lib_function) > 1){
+                run($lib_function[0],array_slice($lib_function, 1));
+            } else {
+                run($lib_function[0],[]);
+            }
         }
     }
- }
+}
 
- function random_section(array $lib_function){
-    if (is_array($lib_function[0])){
-        shuffle($lib_function);
-        foreach ($lib_function as $function) {
-           random_section($function);
-        }
-    } else {
-        if (count($lib_function) > 1){
-            run($lib_function[0],array_slice($lib_function, 1));
+class random_section {
+
+    public static function random_section_array(array $lib_function){
+        return ['random_section', $lib_function];
+    }
+
+    public static function random_section(array $lib_function){
+        if (is_array($lib_function[0])){
+            shuffle($lib_function);
+            foreach ($lib_function as $function) {
+                self::random_section($function);
+            }
         } else {
-            run($lib_function[0],[]);
+            if (count($lib_function) > 1){
+                run($lib_function[0],array_slice($lib_function, 1));
+            } else {
+                run($lib_function[0],[]);
+            }
         }
     }
- }
+}
 
- function run (callable $callback, array $val){
-    call_user_func_array($callback, $val);
+ function run (string $callback, array $val){
+    call_user_func_array(array($callback, $callback), $val);
 }
