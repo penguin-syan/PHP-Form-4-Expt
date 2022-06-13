@@ -63,7 +63,7 @@ namespace penguin_syan\php_form_4_expt;
                 echo "<div id='video'>";
                 echo "<video src=$file width=$width></video>";
                 echo "<p id=$i class=playCount>再生可能回数：$max</p>";
-                echo "<button id=$i class=playButton>再生</button>";
+                echo "<button type=\"button\" id=$i class=playButton>再生</button>";
                 echo "</div>";
                 $i++;
             }
@@ -71,7 +71,7 @@ namespace penguin_syan\php_form_4_expt;
             echo "<div id='video'>";
             echo "<video src=$filePass width=$width></video>";
             echo "<p>$max_play</p>";
-            echo "<button>再生</button>";
+            echo "<button type=\"button\">再生</button>";
             echo "</div>";
         }
         echo "</div>";
