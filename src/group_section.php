@@ -69,5 +69,5 @@ class random_section {
 }
 
  function run (string $callback, array $val){
-    call_user_func_array(array($callback, $callback), $val);
+    call_user_func_array(array("penguin_syan\php_form_4_expt\\$callback", $callback), $val);
 }
