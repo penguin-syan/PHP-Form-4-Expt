@@ -9,20 +9,20 @@ namespace penguin_syan\php_form_4_expt;
  * 
  * 
  * 使用例
- * $group1 = ["penguin_syan\php_form_4_expt\\random_section",
+ * $group1 = ["random_section",
  *             [
- *               ['penguin_syan\php_form_4_expt\\video','./movie.mp4', ObjectSize::SMALL_FULL , 1],
- *               ["penguin_syan\php_form_4_expt\\video",'./movie.mp4', ObjectSize::SMALL, 2],
- *               ["penguin_syan\php_form_4_expt\\video",'./movie.mp4', ObjectSize::SMALL, 3],
- *               ['penguin_syan\php_form_4_expt\video','./movie.mp4', ObjectSize::SMALL_FULL , 4]
+ *               ['video','./movie.mp4', ObjectSize::SMALL_FULL , 1],
+ *               ["video",'./movie.mp4', ObjectSize::SMALL, 2],
+ *               ["video",'./movie.mp4', ObjectSize::SMALL, 3],
+ *               ['video','./movie.mp4', ObjectSize::SMALL_FULL , 4]
  *             ]
  *           ];
  *
- * $group2 = ["penguin_syan\php_form_4_expt\\random_section",
+ * $group2 = ["random_section",
  *             [
- *               ["penguin_syan\php_form_4_expt\\likert_scale",'次のうち当てはまるものを選択してください．','迷わず，直感的に選択してください',['非常に同意する', '同意する', 'やや同意する', 'どちらともいえない', 'やや同意しない', '同意しない', '全く同意しない'],true],
- *               ["penguin_syan\php_form_4_expt\\likert_scale",'次のうち当てはまるものを選択してください．','迷わず，直感的に選択してください',['非常に同意する', '同意する', 'やや同意する', 'どちらともいえない', 'やや同意しない', '同意しない', '全く同意しない'],true],
- *               ["penguin_syan\php_form_4_expt\\likert_scale",'次のうち当てはまるものを選択してください．','迷わず，直感的に選択してください',['非常に同意する', '同意する', 'やや同意する', 'どちらともいえない', 'やや同意しない', '同意しない', '全く同意しない'],true]
+ *               ["likert_scale",'次のうち当てはまるものを選択してください．','迷わず，直感的に選択してください',['非常に同意する', '同意する', 'やや同意する', 'どちらともいえない', 'やや同意しない', '同意しない', '全く同意しない'],true],
+ *               ["likert_scale",'次のうち当てはまるものを選択してください．','迷わず，直感的に選択してください',['非常に同意する', '同意する', 'やや同意する', 'どちらともいえない', 'やや同意しない', '同意しない', '全く同意しない'],true],
+ *               ["likert_scale",'次のうち当てはまるものを選択してください．','迷わず，直感的に選択してください',['非常に同意する', '同意する', 'やや同意する', 'どちらともいえない', 'やや同意しない', '同意しない', '全く同意しない'],true]
  *             ]
  *           ];
  *
