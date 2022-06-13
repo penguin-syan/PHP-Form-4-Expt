@@ -2,26 +2,37 @@
 namespace penguin_syan\php_form_4_expt;
 
 /**
- * 動画を表示するための関数
+ * リッカート尺度を用いた質問を実装するためのclass
  * 
- * リッカート尺度を用いた質問を実装する関数．
- * 引数として渡された質問文，補足文を表示する．
- * また、引数として渡された回答の選択肢をラジオボタンで表示する。
- * 引数に従って，inputタグにrequiredの指定を行う．
- * 
- * 
- *
- * @param string $question 質問文
- * @param string $supplement 補足文
- * @param array $choices 回答の選択肢
- * @param bool $required 回答の必須有無
  */
  class likert_scale {
 
+    /**
+     * section作成用にメソッド名と引数を配列にして返すメソッド
+     * 
+     * @param string $question 質問文
+     * @param string $supplement 補足文
+     * @param array $choices 回答の選択肢
+     * @param bool $required 回答の必須有無
+     * @return array
+     */
     public static function likert_scale_array(string $question,string $supplement,array $choices,bool $required) {
         return ['likert_scale' ,$question, $supplement, $choices, $required];
     }
 
+    /** 
+     * リッカート尺度を用いた質問を実装する関数．
+     * 引数として渡された質問文，補足文を表示する．
+     * また、引数として渡された回答の選択肢をラジオボタンで表示する。
+     * 引数に従って，inputタグにrequiredの指定を行う．
+     * 
+     * 
+     *
+     * @param string $question 質問文
+     * @param string $supplement 補足文
+     * @param array $choices 回答の選択肢
+     * @param bool $required 回答の必須有無
+     */
     public static function likert_scale(string $question,string $supplement,array $choices,bool $required) {
         if ($required){
             $req = "required";

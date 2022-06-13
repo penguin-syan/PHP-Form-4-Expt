@@ -1,26 +1,37 @@
 <?php
 namespace penguin_syan\php_form_4_expt;
 
-/**
- * 動画を表示するための関数
- * 
- * 本関数を使用すると，引数として渡された画像を<video>タグを用いて表示する．
- * この時，引数として渡されたパラメータをもとに画像のサイズを設定する．
- * また、引数として渡されたパラメータをもとに再生時に全画面サイズで表示を行う。
- * 引数として渡された画像のpassが配列の場合ランダムな順番で表示する．
- * 
- * 
- *
- * @param string|array $filePass 画像のpass
- * @param int $size 画像の大きさ
- * @param int $max_play 再生可能回数
- */
 
+/**
+ * 動画を表示するためのclass
+ */
  class video {
+    /**
+     * section作成用にメソッド名と引数を配列にして返すメソッド
+     * 
+     * @param string|array $filePass 画像のpass
+     * @param int $size 画像の大きさ
+     * @param int $max_play 再生可能回数
+     * @return array
+     */
     public static function video_array(string|array $filePass, int $size, int $max_play){
         return ['video', $filePass, $size, $max_play];
     }
-    
+
+    /**
+     * 動画を表示するための関数
+     * 
+     * 本関数を使用すると，引数として渡された画像を<video>タグを用いて表示する．
+     * この時，引数として渡されたパラメータをもとに画像のサイズを設定する．
+     * また、引数として渡されたパラメータをもとに再生時に全画面サイズで表示を行う。
+     * 引数として渡された画像のpassが配列の場合ランダムな順番で表示する．
+     * 
+     * 
+     *
+     * @param string|array $filePass 画像のpass
+     * @param int $size 画像の大きさ
+     * @param int $max_play 再生可能回数
+     */
     public static function video(string|array $filePass, int $size, int $max_play){
         switch ($size){
             case 0:
