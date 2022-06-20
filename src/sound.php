@@ -93,20 +93,14 @@ function sound(string|array $filepass, int $max_play){
                     play_times[{$i}] += 1;
                     
                     for (let number = 0; number < {$sound_number}; number++){
-                    if (play_times[number] >= {$max_play}) {
-                        play_elements[number].setAttribute("disabled", true);
-                        stop_elements[number].setAttribute("disabled", true);
-                    } else {
-                        play_elements[number].removeAttribute("disabled");
-                        stop_elements[number].removeAttribute("disabled");
-                    }
-                    }
-                    
-                    //if (play_times{$i} >= {$max_play}) {
-                    //  btn_play{$i}.setAttribute("disabled", true)
-                    //  btn_pause{$i}.setAttribute("disabled", true)
-                    //}
-                    
+                        if (play_times[number] >= {$max_play}) {
+                            play_elements[number].setAttribute("disabled", true);
+                            stop_elements[number].setAttribute("disabled", true);
+                        } else {
+                            play_elements[number].removeAttribute("disabled");
+                            stop_elements[number].removeAttribute("disabled");
+                        }
+                    }                   
                 });
                 
                 // 再生ボタンが押されたときに実行され，音声が再生される
