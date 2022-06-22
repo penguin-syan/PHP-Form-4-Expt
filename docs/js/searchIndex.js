@@ -121,6 +121,11 @@ Search.appendIndex(
             "summary": "\u30B5\u30F3\u30D7\u30EB\u95A2\u6570",
             "url": "namespaces/penguin-syan-php-form-4-expt.html#function_sampleFunc"
         },                {
+            "fqsen": "\\penguin_syan\\php_form_4_expt\\sd_method\u0028\u0029",
+            "name": "sd_method",
+            "summary": "SD\u6CD5\u306B\u3088\u308B\u8CEA\u554F\u3092\u51FA\u529B\u3059\u308B\u95A2\u6570",
+            "url": "namespaces/penguin-syan-php-form-4-expt.html#function_sd_method"
+        },                {
             "fqsen": "\\",
             "name": "\\",
             "summary": "",
