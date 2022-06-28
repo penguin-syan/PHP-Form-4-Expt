@@ -88,39 +88,120 @@
 </aside>
 
             <div class="phpdocumentor-column -eight phpdocumentor-content">
-                    
-    <h2 class="phpdocumentor-content__title">Files</h2>
-                                                                                                                                <h3>F</h3>
-        <ul class="phpdocumentor-list">
-                    <li><a href="files/src-form-end.html"><abbr title="src/form_end.php">form_end.php</abbr></a></li>
-                </ul>
-                                    <h3>G</h3>
-        <ul class="phpdocumentor-list">
-                    <li><a href="files/src-group-section.html"><abbr title="src/group_section.php">group_section.php</abbr></a></li>
-                </ul>
-                                                        <h3>I</h3>
-        <ul class="phpdocumentor-list">
-                    <li><a href="files/src-image.html"><abbr title="src/image.php">image.php</abbr></a></li>
-                </ul>
-                                                                            <h3>L</h3>
-        <ul class="phpdocumentor-list">
-                    <li><a href="files/src-likert-scale.html"><abbr title="src/likert_scale.php">likert_scale.php</abbr></a></li>
-                </ul>
-                                    <h3>M</h3>
-        <ul class="phpdocumentor-list">
-                    <li><a href="files/src-mov.html"><abbr title="src/mov.php">mov.php</abbr></a></li>
-                </ul>
-                                                        <h3>O</h3>
-        <ul class="phpdocumentor-list">
-                    <li><a href="files/src-objectsize.html"><abbr title="src/ObjectSize.php">ObjectSize.php</abbr></a></li>
-                </ul>
-                                                                                                <h3>S</h3>
-        <ul class="phpdocumentor-list">
-                    <li><a href="files/src-sample-phpdoc.html"><abbr title="src/sample_phpDoc.php">sample_phpDoc.php</abbr></a></li>
-                    <li><a href="files/src-sd-method.html"><abbr title="src/sd_method.php">sd_method.php</abbr></a></li>
-                    <li><a href="files/src-sound.html"><abbr title="src/sound.php">sound.php</abbr></a></li>
-                </ul>
-                                                                                                                                                                        <section data-search-results class="phpdocumentor-search-results phpdocumentor-search-results--hidden">
+                    <ul class="phpdocumentor-breadcrumbs">
+    </ul>
+
+    <article class="phpdocumentor-element -file">
+        <h2 class="phpdocumentor-content__title">sound.php</h2>
+
+        
+    <section class="phpdocumentor-description"></section>
+
+
+
+
+
+
+
+
+<h3 id="toc">
+    Table of Contents
+    <a href="#toc" class="headerlink"><i class="fas fa-link"></i></a>
+</h3>
+
+<dl class="phpdocumentor-table-of-contents">
+                            <dt class="phpdocumentor-table-of-contents__entry -function -">
+    <a href="namespaces/penguin-syan-php-form-4-expt.html#function_sound">sound()</a>
+    <span>
+                                &nbsp;: mixed    </span>
+</dt>
+<dd>音データを再生するための関数</dd>
+
+    </dl>
+
+
+
+        
+
+            <section class="phpdocumentor-functions">
+        <h3 class="phpdocumentor-elements__header" id="functions">
+            Functions
+            <a href="files/src-sound.html#functions" class="headerlink"><i class="fas fa-link"></i></a>
+        </h3>
+                    <article class="phpdocumentor-element -function - ">
+    <h4 class="phpdocumentor-element__name" id="function_sound">
+        sound()
+        <a href="namespaces/penguin-syan-php-form-4-expt.html#function_sound" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/sound.php"><a href="files/src-sound.html"><abbr title="src/sound.php">sound.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">26</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">音データを再生するための関数</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility"></span>
+                    <span class="phpdocumentor-signature__name">sound</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string|array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$filepass</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$max_play</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+        <section class="phpdocumentor-description"><p>本関数は，音データのファイルパス，再生回数上限の値を引数として渡すと，
+音データを再生する<audio>タグと再生・一時停止ボタン，シークバーが出力される．
+音データのファイルパスを配列で複数渡した場合は，<audio>タグがランダムな順番で出力される．
+再生ボタンを押すと音声が再生される．
+一時停止ボタンを押すと再生されている音声が停止する．
+再生回数上限まで音声データを再生した場合，再生不可能となる．</p>
+</section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$filepass</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string|array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>音データのファイルパス</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$max_play</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>音データの最大再生可能回数</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="https://gray-code.com/javascript/view-playback-position-of-audio/"><abbr title="https://gray-code.com/javascript/view-playback-position-of-audio/">https://gray-code.com/javascript/view-playback-position-of-audio/</abbr></a></span>
+                                        
+                                             
+                                    </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash;
+        
+    
+</article>
+            </section>
+
+    </article>
+                <section data-search-results class="phpdocumentor-search-results phpdocumentor-search-results--hidden">
     <section class="phpdocumentor-search-results__dialog">
         <header class="phpdocumentor-search-results__header">
             <h2 class="phpdocumentor-search-results__title">Search results</h2>
@@ -133,7 +214,7 @@
 </section>
             </div>
         </div>
-        <a href="indices/files.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+        <a href="files/src-sound.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
     </main>
 
