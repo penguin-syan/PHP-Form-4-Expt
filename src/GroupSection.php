@@ -22,7 +22,8 @@ require_once __DIR__.'/Functions.php';
  *            );
  * group_section::group_section([$group1,$group2]);
  * 
- * 
+ * @access public
+ * @copyright 2022 HSSLab.
  */
 class GroupSection {
 
