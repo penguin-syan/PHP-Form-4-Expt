@@ -67,5 +67,5 @@ function snake_to_camel(string $function_name) {
         $class_name .= ucfirst($func_name_part);
     }
     
-    return $class_name.PHP_EOL;
+    return $class_name;
 }
