@@ -14,6 +14,12 @@ namespace penguin_syan\php_form_4_expt;
  * @param string|array $filepass 音データのファイルパス
  * @param int $max_play 音データの最大再生可能回数
  * @param int $sound_number 音データの数
+ * @param string|array $audio_id audioタグのID
+ * @param string|array $play_id buttonタグ（再生用）のID
+ * @param string|array $stop_id buttonタグ（一時停止用）のID
+ * @param string|array $playback_id timeタグ（現在の再生時間表示用）のID
+ * @param string|array $end_id timeタグ（最大再生時間表示用）のID
+ * @param string|array $progress_id inputタグ（range:シークバー用）のID
  * @see https://gray-code.com/javascript/view-playback-position-of-audio/
  */
 
@@ -25,13 +31,32 @@ function sound(string|array $filepass, int $max_play){
         // 音データの数だけfor文を回して<audio>タグを出力するため，$filepass配列の要素数を$sound_numberに代入
         $sound_number = count($filepass);
 
+        // 本関数を複数使用した場合にclassの競合を回避するため，ユニークIDを設定
+        $play_class = uniqid("play_", mt_rand());
+        $stop_class = uniqid("stop_", mt_rand());
+        
+        // 音データファイルの数だけidを設定するため，IDを初期化
+        $audio_id = array();
+        $play_id = array();
+        $stop_id = array();
+        $playback_id = array();
+        $end_id = array();
+        $progress_id = array();
+
         // 音データの数だけaudioタグ，再生ボタン，一時停止ボタン，シークバーを出力
-        // javascriptで<audio>の処理を別々に分けるため，タグid名の最後にfor文の値{$i}を連結
         for ($i = 0; $i < $sound_number; $i++){
-            echo "<div><audio id=\"sound{$i}\" controlslist=\"nodownload\" src=\"" . $filepass[$i] . "\"></div>";
-            echo "<button class=\"play_button\" id=\"btn_play{$i}\">再生</button>";
-            echo "<button class=\"stop_button\" id=\"btn_pause{$i}\">一時停止</button>";
-            echo "<p><time id=\"playback_position{$i}\">0:00</time><input type=\"range\" id=\"progress{$i}\" value=\"0\" min=\"0\" step=\"1\" disabled><time id=\"end_position{$i}\">0:00</time></p>";
+            // 本関数を複数使用した場合にidの競合を回避するため，ユニークIDを設定
+            $audio_id[] = uniqid("audio_", mt_rand());
+            $play_id[] = uniqid("play_", mt_rand());
+            $stop_id[] = uniqid("stop_", mt_rand());
+            $playback_id[] = uniqid("playback_", mt_rand());
+            $end_id[] = uniqid("end_", mt_rand());
+            $progress_id[] = uniqid("progress_", mt_rand());
+
+            echo "<div><audio id=\"{$audio_id[$i]}\" controlslist=\"nodownload\" src=\"" . $filepass[$i] . "\"></audio></div>";
+            echo "<button class=\"{$play_class}\" id=\"{$play_id[$i]}\" type=\"button\">再生</button>";
+            echo "<button class=\"{$stop_class}\" id=\"{$stop_id[$i]}\" type=\"button\">一時停止</button>";
+            echo "<p><time id=\"{$playback_id[$i]}\">0:00</time><input type=\"range\" id=\"{$progress_id[$i]}\" value=\"0\" min=\"0\" step=\"1\" disabled><time id=\"{$end_id[$i]}\">0:00</time></p>";
         }
         
         echo <<<EOM
@@ -44,8 +69,8 @@ function sound(string|array $filepass, int $max_play){
             // @param array stop_elements 一時停止ボタンの要素配列
             // 音データを再生中に，他の音データを同時再生させないように，
             // 各ボタンの"disabled"（使用可否）を操作するため，各ボタンの要素をclass名から取得している．
-            const play_elements = document.getElementsByClassName("play_button");
-            const stop_elements = document.getElementsByClassName("stop_button"); 
+            const play_elements = document.getElementsByClassName("{$play_class}");
+            const stop_elements = document.getElementsByClassName("{$stop_class}"); 
             
             // @param array play_times 現在の再生回数
             var play_times = Array({$sound_number});
@@ -54,12 +79,12 @@ function sound(string|array $filepass, int $max_play){
 
         for ($i = 0; $i < $sound_number; $i++){
             echo <<<EOM
-                const btn_play{$i} = document.getElementById("btn_play{$i}");
-                const btn_pause{$i} = document.getElementById("btn_pause{$i}");
-                const playback_position{$i} = document.getElementById("playback_position{$i}");
-                const end_position{$i} = document.getElementById("end_position{$i}");
-                const slider_progress{$i} = document.getElementById("progress{$i}");
-                const audio_element{$i} = document.getElementById("sound{$i}");
+                const audio_element{$i} = document.getElementById("{$audio_id[$i]}");
+                const btn_play{$i} = document.getElementById("{$play_id[$i]}");
+                const btn_pause{$i} = document.getElementById("{$stop_id[$i]}");
+                const playback_position{$i} = document.getElementById("{$playback_id[$i]}");
+                const end_position{$i} = document.getElementById("{$end_id[$i]}");
+                const slider_progress{$i} = document.getElementById("{$progress_id[$i]}");                            
                 
                 var play_timer{$i} = null;                
                 
@@ -68,7 +93,7 @@ function sound(string|array $filepass, int $max_play){
                     play_timer{$i} = setInterval(function(){
                     playback_position{$i}.textContent = convertTime(audio_element{$i}.currentTime);
                     slider_progress{$i}.value = Math.floor( (audio_element{$i}.currentTime / audio_element{$i}.duration) * audio_element{$i}.duration);
-                    }, 500);
+                    }, 100);
                 };
                 
                 // 停止したときに実行
@@ -79,7 +104,7 @@ function sound(string|array $filepass, int $max_play){
                                 
                 // 音声ファイルの再生準備が整ったときに実行
                 audio_element{$i}.addEventListener('loadeddata', (e)=> {
-                    slider_progress{$i}.max = audio_element{$i}.duration;
+                    slider_progress{$i}.max = Math.floor(audio_element{$i}.duration);
                 
                     playback_position{$i}.textContent = convertTime(audio_element{$i}.currentTime);
                     end_position{$i}.textContent = convertTime(audio_element{$i}.duration);
@@ -90,6 +115,7 @@ function sound(string|array $filepass, int $max_play){
                 // 他の音声の再生ボタン，一時停止ボタンが使用可能に
                 audio_element{$i}.addEventListener("ended", e => {
                     stopTimer{$i}();
+                    slider_progress{$i}.value = audio_element{$i}.duration;
                     play_times[{$i}] += 1;
                     
                     for (let number = 0; number < {$sound_number}; number++){
@@ -150,89 +176,96 @@ function sound(string|array $filepass, int $max_play){
             </script>
         EOM;
 
-    } else {      
-        echo "<div><audio controlslist=\"nodownload\" src=\"" . $filepass . "\"></div>";
-        echo "<button id=\"btn_play\">再生</button>";
-        echo "<button id=\"btn_pause\">一時停止</button>";
-        echo "<p><time id=\"playback_position\">0:00</time><input type=\"range\" id=\"progress\" value=\"0\" min=\"0\" step=\"1\" disabled><time id=\"end_position\">0:00</time></p>";
+    } else {
+        // 本関数を複数使用した場合にIDの競合を回避するため，ユニークIDを設定．
+        $audio_id = uniqid("audio_", mt_rand());
+        $play_id = uniqid("play_", mt_rand());
+        $stop_id = uniqid("stop_", mt_rand());
+        $playback_id = uniqid("playback_", mt_rand());
+        $end_id = uniqid("end_", mt_rand());
+        $progress_id = uniqid("progress_", mt_rand());
+
+        echo "<div><audio id=\"{$audio_id}\" controlslist=\"nodownload\" src=\"" . $filepass . "\"></div>";
+        echo "<button id=\"{$play_id}\" type=\"button\">再生</button>";
+        echo "<button id=\"{$stop_id}\" type=\"button\">一時停止</button>";
+        echo "<p><time id=\"{$playback_id}\">0:00</time><input type=\"range\" id=\"{$progress_id}\" value=\"0\" min=\"0\" step=\"1\" disabled><time id=\"{$end_id}\">0:00</time></p>";
 
         echo <<<EOM
-        <script type="text/javascript">        
+        <script type="text/javascript">
 
-        window.addEventListener('DOMContentLoaded', function(){
-
-        const btn_play = document.getElementById("btn_play");
-        const btn_pause = document.getElementById("btn_pause");
-        const playback_position = document.getElementById("playback_position");
-        const end_position = document.getElementById("end_position");
-        const slider_progress = document.getElementById("progress");
-        const audio_element = document.querySelector("audio");
-        
-        var play_timer = null;
-        // @param array play_times 現在の再生回数
-        var play_times = 0;
-        
-        // 再生開始したときに実行
-        const startTimer = function(){
-            play_timer = setInterval(function(){
-            playback_position.textContent = convertTime(audio_element.currentTime);
-            slider_progress.value = Math.floor( (audio_element.currentTime / audio_element.duration) * audio_element.duration);
-            }, 500);
-        };
-        
-        // 停止したときに実行
-        const stopTimer = function(){
-            clearInterval(play_timer);
-            playback_position.textContent = convertTime(audio_element.currentTime);
-        };
-        
-        // 音声ファイルの再生準備が整ったときに実行
-        audio_element.addEventListener('loadeddata', (e)=> {
-            slider_progress.max = audio_element.duration;
-        
-            playback_position.textContent = convertTime(audio_element.currentTime);
-            end_position.textContent = convertTime(audio_element.duration);
-        });
-        
-        // 音声ファイルが最後まで再生されたときに実行
-        audio_element.addEventListener("ended", e => {
-            stopTimer();
-            play_times += 1;
-
-            if (play_times >= {$max_play}) {
-            btn_play.setAttribute("disabled", true)
-            btn_pause.setAttribute("disabled", true)
-            }
-        });
-        
-        // 再生ボタンが押されたときに実行
-        btn_play.addEventListener("click", e => {
-            audio_element.play();
-            startTimer();
-        });
-        
-        // 一時停止ボタンが押されたときに実行
-        btn_pause.addEventListener("click", e => {
-            audio_element.pause();
-            stopTimer();
-        });
-                
-        // 再生時間の表記を「mm:ss」に整える
-        const convertTime = function(time_position) {
+        window.addEventListener('DOMContentLoaded', function(){            
+            const audio_element = document.getElementById("$audio_id");
+            const btn_play = document.getElementById("{$play_id}");
+            const btn_pause = document.getElementById("{$stop_id}");
+            const playback_position = document.getElementById("{$playback_id}");
+            const end_position = document.getElementById("{$end_id}");
+            const slider_progress = document.getElementById("{$progress_id}");
             
-            time_position = Math.floor(time_position);
-            var res = null;
-        
-            if( 60 <= time_position ) {
-            res = Math.floor(time_position / 60);
-            res += ":" + Math.floor(time_position % 60).toString().padStart( 2, '0');
-            } else {
-            res = "0:" + Math.floor(time_position % 60).toString().padStart( 2, '0');
-            }
-        
-            return res;
-        };
-
+            var play_timer = null;
+            // @param array play_times 現在の再生回数
+            var play_times = 0;
+            
+            // 再生開始したときに実行
+            const startTimer = function(){
+                play_timer = setInterval(function(){
+                playback_position.textContent = convertTime(audio_element.currentTime);
+                slider_progress.value = Math.floor( (audio_element.currentTime / audio_element.duration) * audio_element.duration);
+                }, 100);                          
+            };
+            
+            // 停止したときに実行
+            const stopTimer = function(){
+                clearInterval(play_timer);
+                playback_position.textContent = convertTime(audio_element.currentTime);
+            };
+            
+            // 音声ファイルの再生準備が整ったときに実行
+            audio_element.addEventListener('loadeddata', (e)=> {
+                slider_progress.max = Math.floor(audio_element.duration);
+            
+                playback_position.textContent = convertTime(audio_element.currentTime);
+                end_position.textContent = convertTime(audio_element.duration);
+            });
+            
+            // 音声ファイルが最後まで再生されたときに実行
+            audio_element.addEventListener("ended", e => {
+                stopTimer();
+                slider_progress.value = audio_element.duration;
+                play_times += 1;
+    
+                if (play_times >= {$max_play}) {
+                    btn_play.setAttribute("disabled", true);
+                    btn_pause.setAttribute("disabled", true);
+                }
+            });
+            
+            // 再生ボタンが押されたときに実行
+            btn_play.addEventListener("click", e => {
+                audio_element.play();
+                startTimer();
+            });
+            
+            // 一時停止ボタンが押されたときに実行
+            btn_pause.addEventListener("click", e => {
+                audio_element.pause();
+                stopTimer();
+            });
+                    
+            // 再生時間の表記を「mm:ss」に整える
+            const convertTime = function(time_position) {
+                
+                time_position = Math.floor(time_position);
+                var res = null;
+            
+                if( 60 <= time_position ) {
+                res = Math.floor(time_position / 60);
+                res += ":" + Math.floor(time_position % 60).toString().padStart( 2, '0');
+                } else {
+                res = "0:" + Math.floor(time_position % 60).toString().padStart( 2, '0');
+                }
+            
+                return res;
+            };            
         });
     
         </script>
