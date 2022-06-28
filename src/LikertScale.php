@@ -5,7 +5,7 @@ namespace penguin_syan\php_form_4_expt;
  * リッカート尺度を用いた質問を実装するためのclass
  * 
  */
- class likert_scale {
+ class LikertScale {
 
     /**
      * section作成用にメソッド名と引数を配列にして返すメソッド
