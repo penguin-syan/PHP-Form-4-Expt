@@ -126,6 +126,11 @@ Search.appendIndex(
             "summary": "SD\u6CD5\u306B\u3088\u308B\u8CEA\u554F\u3092\u51FA\u529B\u3059\u308B\u95A2\u6570",
             "url": "namespaces/penguin-syan-php-form-4-expt.html#function_sd_method"
         },                {
+            "fqsen": "\\penguin_syan\\php_form_4_expt\\sound\u0028\u0029",
+            "name": "sound",
+            "summary": "\u97F3\u30C7\u30FC\u30BF\u3092\u518D\u751F\u3059\u308B\u305F\u3081\u306E\u95A2\u6570",
+            "url": "namespaces/penguin-syan-php-form-4-expt.html#function_sound"
+        },                {
             "fqsen": "\\",
             "name": "\\",
             "summary": "",
