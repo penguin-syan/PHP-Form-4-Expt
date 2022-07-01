@@ -5,7 +5,7 @@ namespace penguin_syan\php_form_4_expt;
 /**
  * 動画を表示するためのclass
  */
- class video {
+class Video {
     /**
      * section作成用にメソッド名と引数を配列にして返すメソッド
      * 
