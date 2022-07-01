@@ -103,16 +103,16 @@
 
 <dl class="phpdocumentor-table-of-contents">
     
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/penguin-syan-php-form-4-expt-group-section.html"><abbr title="\penguin_syan\php_form_4_expt\group_section">group_section</abbr></a></dt>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/penguin-syan-php-form-4-expt-GroupSection.html"><abbr title="\penguin_syan\php_form_4_expt\GroupSection">GroupSection</abbr></a></dt>
         <dd>複数の質問をまとめて扱うセクションを作成するためのclass</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/penguin-syan-php-form-4-expt-random-section.html"><abbr title="\penguin_syan\php_form_4_expt\random_section">random_section</abbr></a></dt>
-        <dd>複数の質問をまとめて扱い、順番をランダムにするセクションを作成するためのclass.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/penguin-syan-php-form-4-expt-likert-scale.html"><abbr title="\penguin_syan\php_form_4_expt\likert_scale">likert_scale</abbr></a></dt>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/penguin-syan-php-form-4-expt-LikertScale.html"><abbr title="\penguin_syan\php_form_4_expt\LikertScale">LikertScale</abbr></a></dt>
         <dd>リッカート尺度を用いた質問を実装するためのclass</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/penguin-syan-php-form-4-expt-video.html"><abbr title="\penguin_syan\php_form_4_expt\video">video</abbr></a></dt>
-        <dd>動画を表示するためのclass</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/penguin-syan-php-form-4-expt-ObjectSize.html"><abbr title="\penguin_syan\php_form_4_expt\ObjectSize">ObjectSize</abbr></a></dt>
         <dd>動画，画像サイズのパラメータ用クラス（ObjectSize）</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/penguin-syan-php-form-4-expt-RandomSection.html"><abbr title="\penguin_syan\php_form_4_expt\RandomSection">RandomSection</abbr></a></dt>
+        <dd>複数の質問をまとめて扱い、順番をランダムにするセクションを作成するためのclass.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/penguin-syan-php-form-4-expt-Video.html"><abbr title="\penguin_syan\php_form_4_expt\Video">Video</abbr></a></dt>
+        <dd>動画を表示するためのclass</dd>
     
     
     </dl>
@@ -137,6 +137,13 @@
                                 &nbsp;: mixed    </span>
 </dt>
 <dd>コールバック関数を使用するための関数。</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -function -">
+    <a href="namespaces/penguin-syan-php-form-4-expt.html#function_snake_to_camel">snake_to_camel()</a>
+    <span>
+                                &nbsp;: mixed    </span>
+</dt>
+<dd>スネークケースで記述された関数名からキャメルケースのクラス名を求める</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -function -">
     <a href="namespaces/penguin-syan-php-form-4-expt.html#function_image">image()</a>
@@ -211,9 +218,9 @@
         <a href="namespaces/penguin-syan-php-form-4-expt.html#function_run" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/group_section.php"><a href="files/src-group-section.html"><abbr title="src/group_section.php">group_section.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Functions.php"><a href="files/src-functions.html"><abbr title="src/Functions.php">Functions.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">102</span>
+    <span class="phpdocumentor-element-found-in__line">10</span>
 
     </aside>
 
@@ -239,6 +246,49 @@
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash;
+        
+    
+</article>
+                    <article class="phpdocumentor-element -function - ">
+    <h4 class="phpdocumentor-element__name" id="function_snake_to_camel">
+        snake_to_camel()
+        <a href="namespaces/penguin-syan-php-form-4-expt.html#function_snake_to_camel" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Functions.php"><a href="files/src-functions.html"><abbr title="src/Functions.php">Functions.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">23</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">スネークケースで記述された関数名からキャメルケースのクラス名を求める</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility"></span>
+                    <span class="phpdocumentor-signature__name">snake_to_camel</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$function_name</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+        <section class="phpdocumentor-description"><p>スネークケースで記述された関数名から，その関数が所属するクラス名を求めることができる．
+ただし，関数名とクラス名が同一である場合に限る．</p>
+</section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$function_name</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>クラス名を求める関数名</p>
+</section>
+
             </dd>
             </dl>
 
