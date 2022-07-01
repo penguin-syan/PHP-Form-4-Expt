@@ -4,6 +4,9 @@ namespace penguin_syan\php_form_4_expt;
 
 /**
  * 動画を表示するためのclass
+ * 
+ * @access public
+ * @copyright 2022 HSSLab.
  */
 class Video {
     /**

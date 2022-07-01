@@ -4,6 +4,8 @@ namespace penguin_syan\php_form_4_expt;
 /**
  * リッカート尺度を用いた質問を実装するためのclass
  * 
+ * @access public
+ * @copyright 2022 HSSLab.
  */
  class LikertScale {
 

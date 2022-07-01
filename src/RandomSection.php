@@ -6,6 +6,9 @@ require_once __DIR__.'/Functions.php';
 
 /**
  * 複数の質問をまとめて扱い、順番をランダムにするセクションを作成するためのclass.
+ * 
+ * @access public
+ * @copyright 2022 HSSLab.
  */
 class RandomSection {
 
