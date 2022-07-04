@@ -14,7 +14,7 @@ class FormEnd {
      * 
      * 本関数を使用すると，formの終了タグ"</form>"が出力される．
      */
-    function form_end(){
+    public static function form_end(){
         echo "</form>";
     }
 }
