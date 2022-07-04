@@ -4,6 +4,8 @@ namespace penguin_syan\php_form_4_expt;
 /**
  * 動画，画像サイズのパラメータ用クラス（ObjectSize）
  *  
+ * @access public
+ * @copyright 2022 HSSLab.
  */
 class ObjectSize {
     const SMALL = 0;
