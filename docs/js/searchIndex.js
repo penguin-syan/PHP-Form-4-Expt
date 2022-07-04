@@ -51,6 +51,36 @@ Search.appendIndex(
             "summary": "\u753B\u50CF\u3092\u8868\u793A\u3059\u308B\u305F\u3081\u306E\u95A2\u6570",
             "url": "classes/penguin-syan-php-form-4-expt-Image.html#method_image"
         },                {
+            "fqsen": "\\penguin_syan\\php_form_4_expt\\InputTextType",
+            "name": "InputTextType",
+            "summary": "\u30C6\u30AD\u30B9\u30C8\u30DC\u30C3\u30AF\u30B9\u306E\u5165\u529B\u5F62\u5F0F\u3092\u6307\u5B9A\u3059\u308B\u969B\u306E\u30D1\u30E9\u30E1\u30FC\u30BF\u7528\u30AF\u30E9\u30B9",
+            "url": "classes/penguin-syan-php-form-4-expt-InputTextType.html"
+        },                {
+            "fqsen": "\\penguin_syan\\php_form_4_expt\\InputTextType\u003A\u003AINTEGER",
+            "name": "INTEGER",
+            "summary": "",
+            "url": "classes/penguin-syan-php-form-4-expt-InputTextType.html#constant_INTEGER"
+        },                {
+            "fqsen": "\\penguin_syan\\php_form_4_expt\\InputTextType\u003A\u003ADECIMAL",
+            "name": "DECIMAL",
+            "summary": "",
+            "url": "classes/penguin-syan-php-form-4-expt-InputTextType.html#constant_DECIMAL"
+        },                {
+            "fqsen": "\\penguin_syan\\php_form_4_expt\\InputTextType\u003A\u003AALPHABET",
+            "name": "ALPHABET",
+            "summary": "",
+            "url": "classes/penguin-syan-php-form-4-expt-InputTextType.html#constant_ALPHABET"
+        },                {
+            "fqsen": "\\penguin_syan\\php_form_4_expt\\InputTextType\u003A\u003AALPHANUMERICAL",
+            "name": "ALPHANUMERICAL",
+            "summary": "",
+            "url": "classes/penguin-syan-php-form-4-expt-InputTextType.html#constant_ALPHANUMERICAL"
+        },                {
+            "fqsen": "\\penguin_syan\\php_form_4_expt\\InputTextType\u003A\u003AARBITRARY",
+            "name": "ARBITRARY",
+            "summary": "",
+            "url": "classes/penguin-syan-php-form-4-expt-InputTextType.html#constant_ARBITRARY"
+        },                {
             "fqsen": "\\penguin_syan\\php_form_4_expt\\LikertScale",
             "name": "LikertScale",
             "summary": "\u30EA\u30C3\u30AB\u30FC\u30C8\u5C3A\u5EA6\u3092\u7528\u3044\u305F\u8CEA\u554F\u3092\u5B9F\u88C5\u3059\u308B\u305F\u3081\u306Eclass",
@@ -165,6 +195,21 @@ Search.appendIndex(
             "name": "sound",
             "summary": "\u97F3\u30C7\u30FC\u30BF\u3092\u518D\u751F\u3059\u308B\u305F\u3081\u306E\u95A2\u6570",
             "url": "classes/penguin-syan-php-form-4-expt-Sound.html#method_sound"
+        },                {
+            "fqsen": "\\penguin_syan\\php_form_4_expt\\Textbox",
+            "name": "Textbox",
+            "summary": "",
+            "url": "classes/penguin-syan-php-form-4-expt-Textbox.html"
+        },                {
+            "fqsen": "\\penguin_syan\\php_form_4_expt\\Textbox\u003A\u003Atextbox\u0028\u0029",
+            "name": "textbox",
+            "summary": "\u81EA\u7531\u8A18\u8FF0\u5F62\u5F0F\u306E\u8CEA\u554F\u3092\u51FA\u529B\u3059\u308B\u95A2\u6570",
+            "url": "classes/penguin-syan-php-form-4-expt-Textbox.html#method_textbox"
+        },                {
+            "fqsen": "\\penguin_syan\\php_form_4_expt\\Textbox\u003A\u003Atextbox_array\u0028\u0029",
+            "name": "textbox_array",
+            "summary": "",
+            "url": "classes/penguin-syan-php-form-4-expt-Textbox.html#method_textbox_array"
         },                {
             "fqsen": "\\penguin_syan\\php_form_4_expt\\Video",
             "name": "Video",
