@@ -8,7 +8,7 @@ namespace penguin_syan\php_form_4_expt;
  * @copyright 2022 HSSLab
 */
 
-require_once "./InputTextType.php";
+require_once __DIR__."/InputTextType.php";
 
 class Textbox{
 /**
@@ -27,15 +27,15 @@ class Textbox{
  * @param string $question 質問文
  * @param string $supplement 補足文
  * @param int $type テキストボックスの入力形式
- * @param float $max_length 最大入力可能文字数
+ * @param float $max_length 入力可能な最大文字数または最大値
  * @param boolean $required 回答必須の有無
- * @param float $min_length 最小入力条件文字数
+ * @param float $min_length 入力に必要な最小文字数または最小値
  * @see ./InputTextType.php: InputTextTypeクラスを呼び出し
  * @throws $max_lengthと$min_lengthの型にdoubleではなくfloatを使用しているためか，入力形式が少数で例えば数値範囲が5~10とした場合，
  * 　　　　「4.9」や「10.1」と入力した場合にはエラーが出るが「4.9999999999999」や「10.00000000000001」と入力すると切り上げ・切り捨てによる誤差は発生しエラーが出ない．
  * @todo 入力された文字列に対するエスケープ処理には未対応
  */
-    public function textbox(string $question, string $supplement, int $type, float $max_length, bool $required, float $min_length = 0){
+    public static function textbox(string $question, string $supplement, int $type, float $max_length, bool $required, float $min_length = 0){
         echo "<div>";
         echo "<h4>{$question}</h4>";
         echo "<p>{$supplement}</p>";
@@ -293,7 +293,7 @@ class Textbox{
             EOM;               
     }
 
-    public function textbox_array(string $question, string $supplement, int $type, float $max_length, bool $required, float $min_length = 0){
+    public static function textbox_array(string $question, string $supplement, int $type, float $max_length, bool $required, float $min_length = 0){
         return ["textbox", $question, $supplement, $type, $max_length, $required, $min_length];
     }
 }
