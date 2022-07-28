@@ -151,21 +151,6 @@ Search.appendIndex(
             "summary": "\u8907\u6570\u306E\u8CEA\u554F\u3092\u307E\u3068\u3081\u3066\u6271\u3044\u3001\u9806\u756A\u3092\u30E9\u30F3\u30C0\u30E0\u306B\u3059\u308B\u30BB\u30AF\u30B7\u30E7\u30F3\u3092\u4F5C\u6210\u3059\u308B\u305F\u3081\u306E\u95A2\u6570",
             "url": "classes/penguin-syan-php-form-4-expt-RandomSection.html#method_random_section"
         },                {
-            "fqsen": "\\penguin_syan\\php_form_4_expt\\SampleFunction",
-            "name": "SampleFunction",
-            "summary": "\u30B5\u30F3\u30D7\u30EB\u7528\u306E\u30AF\u30E9\u30B9",
-            "url": "classes/penguin-syan-php-form-4-expt-SampleFunction.html"
-        },                {
-            "fqsen": "\\penguin_syan\\php_form_4_expt\\SampleFunction\u003A\u003Asample_function_array\u0028\u0029",
-            "name": "sample_function_array",
-            "summary": "\u30BB\u30AF\u30B7\u30E7\u30F3\u3092\u7528\u3044\u3066\u30B5\u30F3\u30D7\u30EB\u95A2\u6570\u3092\u547C\u3073\u51FA\u3059\u305F\u3081\u306E\u95A2\u6570",
-            "url": "classes/penguin-syan-php-form-4-expt-SampleFunction.html#method_sample_function_array"
-        },                {
-            "fqsen": "\\penguin_syan\\php_form_4_expt\\SampleFunction\u003A\u003Asample_function\u0028\u0029",
-            "name": "sample_function",
-            "summary": "\u30B5\u30F3\u30D7\u30EB\u95A2\u6570",
-            "url": "classes/penguin-syan-php-form-4-expt-SampleFunction.html#method_sample_function"
-        },                {
             "fqsen": "\\penguin_syan\\php_form_4_expt\\SdMethod",
             "name": "SdMethod",
             "summary": "SD\u6CD5\u3092\u5B9F\u88C5\u3059\u308B\u95A2\u6570\u304C\u3042\u308B\u30AF\u30E9\u30B9",
